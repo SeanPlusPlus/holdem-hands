@@ -5,14 +5,15 @@ import React, {
 } from 'react';
 import AppReducer from '../reducers/AppReducer';
 import { log } from '../utils/logger'
+import { deck } from '../utils/deck';
 
 const { env: { NODE_ENV }} = process
 
-const initialState = {
-  // CONSTANTS
-  NODE_ENV,
+const DECK = deck()
 
-  // variable
+const initialState = {
+  NODE_ENV,
+  DECK,
   modal: {},
 }
 

@@ -22,7 +22,7 @@ const About = () => {
         </h3>
         <div>
           <p className="pb-4">
-            This is a little tool I made to help me with studying Texas Hold'em hole hands 
+            This is a little tool I made to help me with studying Texas Hold&apos;em hole hands 
           </p>
         </div>
         <div className="modal-action pt-5">

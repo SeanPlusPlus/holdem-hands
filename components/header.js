@@ -17,7 +17,7 @@ const Header = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:domain" value="holdem-hands.vercel.app" />
       <meta name="twitter:title" value="Hold&apos;em Hands" />
-      <meta name="twitter:description" value="Texas Hold'em Tutorial" />
+      <meta name="twitter:description" value="Texas Hold&apos;em Tutorial" />
       <meta name="twitter:image" content="https://i.imgur.com/9mRsAsh.png" />
       <meta name="twitter:url" value="https://holdem-hands.vercel.app/" />
     </Head>
