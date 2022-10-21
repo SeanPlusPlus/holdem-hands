@@ -45,7 +45,7 @@ const Home = () => {
             </div>
             <div className="grid grid-cols-3 gap-3">
               {nums.map((n) => (
-                <div>{n}</div>
+                <div className="border rounded border-sky-500 pt-5 pb-5">{n}</div>
               ))}
             </div>
           </div>
