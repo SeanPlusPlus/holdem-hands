@@ -98,7 +98,7 @@ const Home = () => {
               ))}
             </div>
             {hand.length > 1 && (
-              <div className="mt-4 pt-2 pb-2 border rounded">
+              <div className="mt-2 pt-2 pb-2 border rounded">
                 <code>
                   <span className="mr-1 ml-1">
                     {hand[hand.length - 2][0].card}
