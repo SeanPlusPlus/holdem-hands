@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState'
+import Image from 'next/image'
 
 const About = () => {
   const {
@@ -22,8 +23,21 @@ const About = () => {
         </h3>
         <div>
           <p className="pb-4">
-            This is a little tool I made to help me with studying Texas Hold&apos;em hole hands 
+            This is a tool for studying Texas Hold&apos;em starting hands sourced from this Wikipedia entry:
           </p>
+          <p className="pb-4">
+            <a className="link text-sky-500" href="https://en.wikipedia.org/wiki/Texas_hold_%27em_starting_hands" rel="noopener noreferrer" target="_blank">
+            Texas Hold&apos;em Starting Hands
+            </a>
+          </p>
+          <p className="pb-4">
+            Each hand presented is scored based on this table:
+          </p>
+          <Image
+            src="/table1.png"
+            width={400}
+            height={360}
+          />
         </div>
         <div className="modal-action pt-5">
           <label htmlFor="my-modal" className="btn" onClick={handleClose}>Close</label>
