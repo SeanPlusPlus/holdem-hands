@@ -26,7 +26,7 @@ const Nav = () => {
         </div>
         <div className="flex-none gap-2">
           <button
-            className="mr-2 btn btn-outline border-sky-50"
+            className="mr-1 btn btn-outline border-sky-50"
             onClick={handleOpenAbout}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-sky-50">
