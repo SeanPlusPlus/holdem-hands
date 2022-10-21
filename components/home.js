@@ -3,7 +3,7 @@ import _last from 'lodash/last'
 import Image from 'next/image'
 import { GlobalContext } from '../context/GlobalState'
 
-
+const nums = Array(9).fill().map((x,i)=>i + 1)
 
 const Home = () => {
   const [display, setDisplay] = useState(null)
@@ -43,9 +43,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            {display[0].card} of {display[0].suit}
-            <br />
-            {display[1].card} of {display[1].suit}
+            {nums.map((n) => (n))}
           </div>
         </div>
       </div>
