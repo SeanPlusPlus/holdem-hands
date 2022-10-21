@@ -3,7 +3,12 @@ import _last from 'lodash/last'
 import Image from 'next/image'
 import { GlobalContext } from '../context/GlobalState'
 
-const nums = Array(9).fill().map((x,i)=>i + 1)
+const nums = Array(9).fill().map((x,i)=>{
+  if (i === 8) {
+    return '∅'
+  }
+  return i + 1
+})
 
 const Home = () => {
   const [display, setDisplay] = useState(null)
@@ -15,6 +20,11 @@ const Home = () => {
   useEffect(() => {
     setDisplay(_last(hand))
   })
+
+  const handleClick = (e) => {
+    const n = parseInt(e.target.id, 10)
+    console.log(n)
+  }
 
   if (!display) {
     return <></>
@@ -45,7 +55,12 @@ const Home = () => {
             </div>
             <div className="grid grid-cols-3 gap-3">
               {nums.map((n) => (
-                <div className="border rounded border-sky-500 pt-5 pb-5">{n}</div>
+                <div
+                  key={n}
+                  id={n}
+                  onClick={handleClick}
+                  className="border rounded border-sky-500 pt-5 pb-5"
+                >{n}</div>
               ))}
             </div>
           </div>
