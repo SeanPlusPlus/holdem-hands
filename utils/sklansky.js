@@ -57,10 +57,23 @@ export const sklansky = (card1, card2, score) => {
         val = 5
       }
     }
+
     // King
     if (c1 === 'K') {
       if (c2 === 'Q') {
         val = 2
+      }
+      else if (c2 === 'J') {
+        val = 3
+      }
+      else if (c2 === 'T') {
+        val = 4
+      }
+      else if (c2 === '9') {
+        val = 6
+      }
+      else {
+        val = 7
       }
     }
   }
@@ -68,7 +81,7 @@ export const sklansky = (card1, card2, score) => {
   if (!isSuited) {
     // Ace
     if (c1 === 'A') {
-      if (c2 === 'A') {
+      if (c2 === 'A') { // Pair
         val = 1
       }
       else if (c2 === 'K') {
@@ -90,8 +103,27 @@ export const sklansky = (card1, card2, score) => {
         val = null
       }
     }
+
     // King
     if (c1 === 'K') {
+      if (c2 === 'K') { // Pair
+        val = 1
+      }
+      if (c2 === 'Q') {
+        val = 4
+      }
+      else if (c2 === 'J') {
+        val = 5
+      }
+      else if (c2 === 'T') {
+        val = 6
+      }
+      else if (c2 === '9') {
+        val = 8
+      }
+      else {
+        val = null
+      }
     }
   }
 
