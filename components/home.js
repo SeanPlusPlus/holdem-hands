@@ -36,8 +36,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="hero bg-base-200">
-        <div className="hero-content text-center mb-64 mt-0 ml-0 mr-0 pr-0 pl-0">
+      <div className="hero">
+        <div className="hero-content text-center mt-0 ml-0 mr-0 pr-0 pl-0">
           <div className="max-w-md">
             <div className="mb-3">
               { res === null && (
