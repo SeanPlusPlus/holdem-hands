@@ -20,7 +20,7 @@ const Nav = () => {
         <div className="flex-1">
           <Link href="/">
             <button className="btn btn-outline normal-case text-xl ml-2">
-              <span className="text-slate-300">Hold'em Hands</span>
+              <span className="text-slate-300">Hold&apos;em Hands</span>
             </button>
           </Link>
         </div>
