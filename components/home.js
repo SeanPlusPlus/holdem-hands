@@ -54,6 +54,13 @@ const Home = () => {
                   </div>
                 </div>
               )}
+              { res === false && (
+                <div className="alert alert-warning shadow-lg">
+                  <div>
+                    <span>Incorrect! Try again</span>
+                  </div>
+                </div>
+              )}
             </div>
            <div className="flex mb-2">
               <div className="mr-2">
