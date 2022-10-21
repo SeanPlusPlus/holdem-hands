@@ -44,16 +44,18 @@ export const sklansky = (card1, card2, score) => {
       if (c2 === 'K') {
         val = 1
       }
-      if (c2 === 'Q') {
+      else if (c2 === 'Q') {
         val = 2
       }
-      if (c2 === 'J') {
+      else if (c2 === 'J') {
         val = 2
       }
-      if (c2 === 'T') {
+      else if (c2 === 'T') {
         val = 3
       }
-      val = 5
+      else {
+        val = 5
+      }
     }
     // King
     if (c1 === 'K') {
@@ -69,20 +71,23 @@ export const sklansky = (card1, card2, score) => {
       if (c2 === 'A') {
         val = 1
       }
-      if (c2 === 'K') {
+      else if (c2 === 'K') {
         val = 2
       }
-      if (c2 === 'Q') {
+      else if (c2 === 'Q') {
         val = 3
       }
-      if (c2 === 'J') {
+      else if (c2 === 'J') {
         val = 4
       }
-      if (c2 === 'T') {
+      else if (c2 === 'T') {
         val = 6
       }
-      if (c2 === '9') {
+      else if (c2 === '9') {
         val = 8
+      }
+      else {
+        val = null
       }
     }
     // King
