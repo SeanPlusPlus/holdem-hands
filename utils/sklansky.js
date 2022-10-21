@@ -162,6 +162,71 @@ export const sklansky = (card1, card2, score) => {
         val = null
       }
     }
+
+    // Seven
+    if (c1 === '7') {
+      if (c2 === '6') {
+        val = 5
+      }
+      else if (c2 === '5') {
+        val = 6
+      }
+      else if (c2 === '4') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Six
+    if (c1 === '6') {
+      if (c2 === '5') {
+        val = 7
+      }
+      else if (c2 === '4') {
+        val = 7
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Five
+    if (c1 === '5') {
+      if (c2 === '4') {
+        val = 6
+      }
+      else if (c2 === '3') {
+        val = 7
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Four
+    if (c1 === '4') {
+      if (c2 === '3') {
+        val = 7
+      }
+      else if (c2 === '2') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Three
+    if (c1 === '3') {
+      if (c2 === '2') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
   }
 
   if (!isSuited) {
@@ -286,6 +351,75 @@ export const sklansky = (card1, card2, score) => {
       }
       else if (c2 === '7') {
         val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Seven
+    if (c1 === '7') {
+      if (c2 === '7') { // Pair
+        val = 5
+      }
+      else if (c2 === '6') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Six
+    if (c1 === '6') {
+      if (c2 === '6') { // Pair
+        val = 6
+      }
+      else if (c2 === '5') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Five
+    if (c1 === '5') {
+      if (c2 === '5') { // Pair
+        val = 6
+      }
+      else if (c2 === '4') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Four
+    if (c1 === '4') {
+      if (c2 === '4') { // Pair
+        val = 7
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Three
+    if (c1 === '3') {
+      if (c2 === '3') { // Pair
+        val = 7
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Two
+    if (c1 === '2') {
+      if (c2 === '2') { // Pair
+        val = 7
       }
       else {
         val = null
