@@ -3,7 +3,7 @@ import Head from 'next/head'
 const Header = () => {
   return (
     <Head>
-      <title>Hold'em Hands</title>
+      <title>Hold&apos;em Hands</title>
       <meta name="description" content="Hold&apos;em Hands by Sean++" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="icon" href="https://i.imgur.com/9mRsAsh.png" />
