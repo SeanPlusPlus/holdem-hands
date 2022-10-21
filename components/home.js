@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-base-200">
         <div className="hero-content text-center mb-64">
           <div className="max-w-md">
             {display[0].card} of {display[0].suit}
