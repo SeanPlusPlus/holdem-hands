@@ -15,6 +15,7 @@ const getFaceCard = (num) => {
     return 'Ace'
   }
 }
+
 export const deck = () => {
   const cards = []
   const suits = [

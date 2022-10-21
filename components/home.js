@@ -1,12 +1,23 @@
-import Image from "next/image"
+import { useContext} from 'react'
+import { GlobalContext } from '../context/GlobalState'
+import _last from 'lodash/last'
+
 
 const Home = () => {
+  const {
+    hand,
+  } = useContext(GlobalContext)
+
+  const display = _last(hand)
+
   return (
     <>
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content text-center mb-64">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold mb-5">Hold&apos;em Hands</h1>
+            {display[0].card} of {display[0].suit}
+            <br />
+            {display[1].card} of {display[1].suit}
           </div>
         </div>
       </div>

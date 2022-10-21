@@ -5,15 +5,13 @@ import React, {
 } from 'react';
 import AppReducer from '../reducers/AppReducer';
 import { log } from '../utils/logger'
-import { deck } from '../utils/deck';
+import { hand } from '../utils/hand'
 
 const { env: { NODE_ENV }} = process
 
-const DECK = deck()
-
 const initialState = {
   NODE_ENV,
-  DECK,
+  hand: [hand()],
   modal: {},
 }
 
