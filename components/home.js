@@ -26,21 +26,20 @@ const Home = () => {
         <div className="hero-content text-center mb-64 mt-1 ml-0 mr-0 pr-0 pl-0">
           <div className="max-w-md">
             <div className="flex">
-              <div className="ml-1">
+              <div className="mr-2">
                 <Image
                   src="/cards/KS.svg"
                   alt="ks"
-                  width={180}
-                  height={300}
-                  className="mr-1"
+                  width={160}
+                  height={230}
                 />
               </div>
-              <div className="ml-1">
+              <div className="ml-2">
                 <Image
                   src="/cards/QS.svg"
                   alt="qs"
-                  width={180}
-                  height={300}
+                  width={160}
+                  height={230}
                 />
 
               </div>
