@@ -76,6 +76,25 @@ export const sklansky = (card1, card2, score) => {
         val = 7
       }
     }
+
+    // Queen
+    if (c1 === 'Q') {
+      if (c2 === 'J') {
+        val = 3
+      }
+      else if (c2 === 'T') {
+        val = 4
+      }
+      else if (c2 === '9') {
+        val = 5
+      }
+      else if (c2 === '8') {
+        val = 7
+      }
+      else {
+        val = null
+      }
+    }
   }
 
   if (!isSuited) {
@@ -111,6 +130,25 @@ export const sklansky = (card1, card2, score) => {
       }
       if (c2 === 'Q') {
         val = 4
+      }
+      else if (c2 === 'J') {
+        val = 5
+      }
+      else if (c2 === 'T') {
+        val = 6
+      }
+      else if (c2 === '9') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Queen
+    if (c1 === 'Q') {
+      if (c2 === 'Q') { // Pair
+        val = 1
       }
       else if (c2 === 'J') {
         val = 5

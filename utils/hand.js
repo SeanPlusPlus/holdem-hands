@@ -8,7 +8,10 @@ export const hand = () => {
   // return [{card: 'A', suit: rand[0].suit}, rand[1]]
 
   // King
-  return [{card: 'K', suit: rand[0].suit}, rand[1]]
+  // return [{card: 'K', suit: rand[0].suit}, rand[1]]
+
+  // Queen
+  return [{card: 'Q', suit: rand[0].suit}, rand[1]]
 
   // return rand
 }
