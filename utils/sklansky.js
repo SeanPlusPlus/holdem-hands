@@ -146,6 +146,22 @@ export const sklansky = (card1, card2, score) => {
         val = null
       }
     }
+
+    // Eight
+    if (c1 === '8') {
+      if (c2 === '7') {
+        val = 5
+      }
+      else if (c2 === '6') {
+        val = 6
+      }
+      else if (c2 === '5') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
   }
 
   if (!isSuited) {
@@ -257,6 +273,19 @@ export const sklansky = (card1, card2, score) => {
       }
       else if (c2 === '8') {
         val = 7
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Eight
+    if (c1 === '8') {
+      if (c2 === '8') { // Pair
+        val = 4
+      }
+      else if (c2 === '7') {
+        val = 8
       }
       else {
         val = null
