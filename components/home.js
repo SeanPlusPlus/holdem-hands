@@ -10,6 +10,10 @@ const Home = () => {
 
   const display = _last(hand)
 
+  if (!display) {
+    return <></>
+  }
+
   return (
     <>
       <div className="hero bg-base-200">
