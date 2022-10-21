@@ -34,17 +34,63 @@ const sortCards = (c1, c2) => {
 export const sklansky = (card1, card2, score) => {
   const isSuited = suited(card1.split('')[1], card2.split('')[1])
   const sorted = sortCards(card1.split('')[0], card2.split('')[0])
-  const c1 = sorted[0]
-  const c2 = sorted[1]
-  console.log(c1, c2, score, isSuited)
+  const c1 = sorted[0] + ''
+  const c2 = sorted[1] + ''
+  let val = null
 
   if (isSuited) {
-
+    // Ace
+    if (c1 === 'A') {
+      if (c2 === 'K') {
+        val = 1
+      }
+      if (c2 === 'Q') {
+        val = 2
+      }
+      if (c2 === 'J') {
+        val = 2
+      }
+      if (c2 === 'T') {
+        val = 3
+      }
+      val = 5
+    }
+    // King
+    if (c1 === 'K') {
+      if (c2 === 'Q') {
+        val = 2
+      }
+    }
   }
 
-
-  if (score < 4) {
-    return false
+  if (!isSuited) {
+    // Ace
+    if (c1 === 'A') {
+      if (c2 === 'A') {
+        val = 1
+      }
+      if (c2 === 'K') {
+        val = 2
+      }
+      if (c2 === 'Q') {
+        val = 3
+      }
+      if (c2 === 'J') {
+        val = 4
+      }
+      if (c2 === 'T') {
+        val = 6
+      }
+      if (c2 === '9') {
+        val = 8
+      }
+    }
+    // King
+    if (c1 === 'K') {
+    }
   }
-  return true
+
+  console.log(isSuited, c1, c2, 'score', score, 'val', val)
+
+  return score === val
 }

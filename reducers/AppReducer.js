@@ -1,4 +1,5 @@
 import { log } from '../utils/logger'
+import { hand } from '../utils/hand'
 
 export default (state, action) => {
 
@@ -11,6 +12,11 @@ export default (state, action) => {
       return {
         ...state,
         modal: action.payload,
+      }
+    case 'UPDATE_HAND':
+      return {
+        ...state,
+        hand: [...state.hand, hand()],
       }
     default:
       return state;

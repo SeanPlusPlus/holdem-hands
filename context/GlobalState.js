@@ -30,6 +30,12 @@ export const GlobalProvider = ({
     });
   }
 
+  function setHand() {
+    dispatch({
+      type: 'UPDATE_HAND',
+    });
+  }
+
   useEffect(() => {
     log('state', 'rgb(217, 38, 169)', state);
   }, [state])
@@ -38,6 +44,7 @@ export const GlobalProvider = ({
       {
         ...state,
         setModal,
+        setHand,
       }
     } > {
       children

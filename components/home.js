@@ -14,9 +14,11 @@ const nums = Array(9).fill().map((x,i)=>{
 const Home = () => {
   const [display, setDisplay] = useState(null)
   const [res, setRes] = useState(null)
+  const [score, setScore] = useState(null)
 
   const {
     hand,
+    setHand,
   } = useContext(GlobalContext)
 
   useEffect(() => {
@@ -24,10 +26,15 @@ const Home = () => {
   })
 
   const handleClick = (e) => {
-    const n = parseInt(e.target.id, 10)
+    const n = parseInt(e.target.id, 10) || null
     const card1 = display[0].card + display[0].suit
     const card2 = display[1].card + display[1].suit
-    setRes(sklansky(card1, card2, n))
+    const r = sklansky(card1, card2, n)
+    setRes(r)
+    if (r) {
+      setHand()
+      setScore(n)
+    }
   }
 
   if (!display) {
@@ -90,6 +97,25 @@ const Home = () => {
                 >{n}</div>
               ))}
             </div>
+            {hand.length > 1 && (
+              <div className="mt-4 pt-2 pb-2 border rounded">
+                <code>
+                  <span className="mr-1 ml-1">
+                    {hand[hand.length - 2][0].card}
+                    {hand[hand.length - 2][0].suit}
+                  </span>
+                  :
+                  <span className="ml-1 mr-1">
+                    {hand[hand.length - 2][1].card}
+                    {hand[hand.length - 2][1].suit}
+                  </span>
+                  =
+                  <span className="ml-1">
+                    {score || '∅'}
+                  </span>
+                </code>
+              </div>
+            )}
           </div>
         </div>
       </div>
