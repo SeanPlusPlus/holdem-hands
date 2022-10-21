@@ -1,14 +1,18 @@
-import { useContext} from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import _last from 'lodash/last'
 
 
 const Home = () => {
+  const [display, setDisplay] = useState(null)
+
   const {
     hand,
   } = useContext(GlobalContext)
 
-  const display = _last(hand)
+  useEffect(() => {
+    setDisplay(_last(hand))
+  })
 
   if (!display) {
     return <></>
