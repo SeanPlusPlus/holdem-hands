@@ -11,7 +11,10 @@ export const hand = () => {
   // return [{card: 'K', suit: rand[0].suit}, rand[1]]
 
   // Queen
-  return [{card: 'Q', suit: rand[0].suit}, rand[1]]
+  // return [{card: 'Q', suit: rand[0].suit}, rand[1]]
+
+  // Jack 
+  return [{card: 'J', suit: rand[0].suit}, rand[1]]
 
   // return rand
 }

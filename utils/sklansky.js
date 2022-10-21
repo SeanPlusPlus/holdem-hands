@@ -95,6 +95,25 @@ export const sklansky = (card1, card2, score) => {
         val = null
       }
     }
+
+    // Jack
+    if (c1 === 'J') {
+      if (c2 === 'T') {
+        val = 3
+      }
+      else if (c2 === '9') {
+        val = 4
+      }
+      else if (c2 === '8') {
+        val = 6
+      }
+      else if (c2 === '7') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
   }
 
   if (!isSuited) {
@@ -155,6 +174,25 @@ export const sklansky = (card1, card2, score) => {
       }
       else if (c2 === 'T') {
         val = 6
+      }
+      else if (c2 === '9') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Jack 
+    if (c1 === 'J') {
+      if (c2 === 'J') { // Pair
+        val = 1
+      }
+      else if (c2 === 'T') {
+        val = 5
+      }
+      else if (c2 === '9') {
+        val = 7
       }
       else if (c2 === '9') {
         val = 8
