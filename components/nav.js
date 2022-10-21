@@ -18,7 +18,7 @@ const Nav = () => {
     <>
       <div className="navbar shadow-lg bg-neutral text-neutral-content">
         <div className="flex-1">
-          <Link href="/">
+          <Link href="/" passHref>
             <button className="btn btn-outline normal-case text-xl ml-2">
               <span className="text-slate-300">Hold&apos;em Hands</span>
             </button>
