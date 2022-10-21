@@ -114,6 +114,22 @@ export const sklansky = (card1, card2, score) => {
         val = null
       }
     }
+
+    // Ten
+    if (c1 === 'T') {
+      if (c2 === '9') {
+        val = 4
+      }
+      else if (c2 === '8') {
+        val = 5
+      }
+      else if (c2 === '7') {
+        val = 7
+      }
+      else {
+        val = null
+      }
+    }
   }
 
   if (!isSuited) {
@@ -195,6 +211,22 @@ export const sklansky = (card1, card2, score) => {
         val = 7
       }
       else if (c2 === '9') {
+        val = 8
+      }
+      else {
+        val = null
+      }
+    }
+
+    // Ten
+    if (c1 === 'T') {
+      if (c2 === 'T') { // Pair
+        val = 2
+      }
+      else if (c2 === '9') {
+        val = 7
+      }
+      else if (c2 === '8') {
         val = 8
       }
       else {
