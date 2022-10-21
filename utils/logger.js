@@ -1,6 +1,6 @@
-const { NODE_ENV } = process.env;
-
+// const { NODE_ENV } = process.env;
 // const isDev = NODE_ENV === 'development';
+
 const isDev = true
 
 export const log = (status, color, data) => {
