@@ -79,7 +79,7 @@ const Home = () => {
                   key={n}
                   id={n}
                   onClick={handleClick}
-                  className="border rounded border-sky-500 pt-6 pb-6 text-xl font-bold"
+                  className="border rounded border-sky-500 pt-6 pb-6 text-xl font-bold cursor-pointer hover:bg-base-300"
                 >{n}</div>
               ))}
             </div>
