@@ -427,7 +427,9 @@ export const sklansky = (card1, card2, score) => {
     }
   }
 
-  console.log(isSuited, c1, c2, 'score', score, 'val', val)
+  if (process.env.NODE_ENV === 'development') {
+    console.log(isSuited, c1, c2, 'score', score, 'val', val)
+  }
 
   return score === val
 }
