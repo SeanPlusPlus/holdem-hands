@@ -103,10 +103,12 @@ const Home = () => {
             </div>
             {hand.length > 1 && (
               <div className="mt-2 pt-2 pb-2 border rounded">
-                <code>
-                  <span>
-                    {hand[hand.length - 2][0].suit === hand[hand.length - 2][1].suit ? 'Suited' : 'Unsuited'}
-                  </span>
+                <div>
+                  { (hand[hand.length - 2][0].card !== hand[hand.length - 2][1].card) && (
+                    <span>
+                      {hand[hand.length - 2][0].suit === hand[hand.length - 2][1].suit ? 'Suited' : 'Unsuited'}
+                    </span>
+                  )}
                   <span className="mr-1 ml-1">
                     {getCard(hand[hand.length - 2][0].card)}
                   </span>
@@ -116,13 +118,29 @@ const Home = () => {
                   <span className="ml-1 mr-1">
                     {getCard(hand[hand.length - 2][1].card)}
                   </span>
-                  <span>
-                    &#61;
-                  </span>
                   <span className="ml-1">
-                    {score || '∅'}
+                    { ((score === null) || (score === 8) || (score === 7)) && (
+                      <div className="badge badge-error gap-2">
+                        {score ? score : '∅'}
+                      </div>
+                    )}
+                    { ((score === 6) || (score === 5) || (score === 4)) && (
+                      <div className="badge badge-warning gap-2">
+                        {score}
+                      </div>
+                    )}
+                    { ((score === 3) || (score === 2)) && (
+                      <div className="badge badge-info gap-2">
+                        {score}
+                      </div>
+                    )}
+                    { (score === 1) && (
+                      <div className="badge badge-success gap-2">
+                        {score}
+                      </div>
+                    )}
                   </span>
-                </code>
+                </div>
               </div>
             )}
           </div>
