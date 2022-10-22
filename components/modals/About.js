@@ -23,7 +23,7 @@ const About = () => {
         </h3>
         <div>
           <p className="pb-3">
-            This is a tool for studying Texas Hold&apos;em starting hands inspired by <a className="link text-sky-500" href="https://en.wikipedia.org/wiki/Texas_hold_%27em_starting_hands" rel="noopener noreferrer" target="_blank">this Wikipedia entry</a>:
+            This is a tool for studying Texas Hold&apos;em starting hands inspired by <a className="link text-sky-500" href="https://en.wikipedia.org/wiki/Texas_hold_%27em_starting_hands" rel="noopener noreferrer" target="_blank">this Wikipedia entry</a>. Simply put, the better the hand, the lower the score.
           </p>
           <Image
             src="/table1.png"
