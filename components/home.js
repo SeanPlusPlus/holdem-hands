@@ -1,11 +1,9 @@
 import { useContext, useState, useEffect } from 'react'
 import _last from 'lodash/last'
 import Image from 'next/image'
-import _sample from 'lodash/sample'
 import { GlobalContext } from '../context/GlobalState'
 import { sklansky } from '../utils/sklansky'
 import { getCard } from '../utils/hand'
-import { prompts } from '../utils/prompts'
 
 const nums = Array(9).fill().map((x,i)=>{
   if (i === 8) {
@@ -64,7 +62,7 @@ const Home = () => {
               { res === true && (
                 <div className="alert alert-success shadow-lg">
                   <div>
-                    <span className="text-sm">{_sample(prompts)}</span>
+                    <span className="text-sm">Correct!</span>
                   </div>
                 </div>
               )}
