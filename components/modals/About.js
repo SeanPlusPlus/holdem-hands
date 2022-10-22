@@ -34,7 +34,7 @@ const About = () => {
             height={360}
           />
           <p className="pt-3">
-            Hit me up and let me know how you like Hold&apos;em Hands!!! <a className="link text-sky-500" href="https://twitter.com/SeanPlusPlus" rel="noopener noreferrer" target="_blank">@SeanPlusPlus</a>
+            Hit me up and let me know your thoughts on this one! <a className="link text-sky-500" href="https://twitter.com/SeanPlusPlus" rel="noopener noreferrer" target="_blank">@SeanPlusPlus</a>
           </p>
         </div>
         <div className="modal-action pt-5">
