@@ -3,6 +3,7 @@ import _last from 'lodash/last'
 import Image from 'next/image'
 import { GlobalContext } from '../context/GlobalState'
 import { sklansky } from '../utils/sklansky'
+import { getCard } from '../utils/hand'
 
 const nums = Array(9).fill().map((x,i)=>{
   if (i === 8) {
@@ -107,13 +108,13 @@ const Home = () => {
                     {hand[hand.length - 2][0].suit === hand[hand.length - 2][1].suit ? 'Suited' : 'Unsuited'}
                   </span>
                   <span className="mr-1 ml-1">
-                    {hand[hand.length - 2][0].card}
+                    {getCard(hand[hand.length - 2][0].card)}
                   </span>
                   <span>
                     &#47;
                   </span>
                   <span className="ml-1 mr-1">
-                    {hand[hand.length - 2][1].card}
+                    {getCard(hand[hand.length - 2][1].card)}
                   </span>
                   <span>
                     &#61;

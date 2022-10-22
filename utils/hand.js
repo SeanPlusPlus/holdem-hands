@@ -30,3 +30,22 @@ export const hand = () => {
   
   return rand
 }
+
+export const getCard = (str) => {
+  if (str === 'A') {
+    return 'Ace'
+  }
+  if (str === 'K') {
+    return 'King'
+  }
+  if (str === 'Q') {
+    return 'Queen'
+  }
+  if (str === 'J') {
+    return 'Jack'
+  }
+  if (str === 'T') {
+    return 'Ten'
+  }
+  return str
+}
