@@ -105,7 +105,7 @@ const Home = () => {
               <div className="mt-2 pt-2 pb-2 border rounded">
                 <div>
                   { (hand[hand.length - 2][0].card !== hand[hand.length - 2][1].card) && (
-                    <span>
+                    <span className="font-bold">
                       {hand[hand.length - 2][0].suit === hand[hand.length - 2][1].suit ? 'Suited' : 'Unsuited'}
                     </span>
                   )}
