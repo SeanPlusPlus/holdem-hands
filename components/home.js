@@ -15,6 +15,7 @@ const Home = () => {
   const [display, setDisplay] = useState(null)
   const [res, setRes] = useState(null)
   const [score, setScore] = useState(null)
+  const [disable, setDisable] = useState(false)
 
   const {
     hand,
@@ -26,6 +27,7 @@ const Home = () => {
   })
 
   const handleClick = (e) => {
+    setDisable(true)
     const n = parseInt(e.target.id, 10) || null
     const card1 = display[0].card + display[0].suit
     const card2 = display[1].card + display[1].suit
@@ -35,6 +37,7 @@ const Home = () => {
       setHand()
       setScore(n)
     }
+    setDisable(false)
   }
 
   if (!display) {
@@ -57,7 +60,7 @@ const Home = () => {
               { res === true && (
                 <div className="alert alert-success shadow-lg">
                   <div>
-                    <span>Correct! How&apos;s about this hand?</span>
+                    <span>Correct! Here&apos;s another hand</span>
                   </div>
                 </div>
               )}
@@ -93,23 +96,28 @@ const Home = () => {
                   key={n}
                   id={n}
                   onClick={handleClick}
-                  className="btn btn-lg border rounded border-base-300 text-xl font-bold cursor-pointer"
+                  className={`btn btn-lg border rounded border-base-300 text-xl font-bold cursor-pointer ${disable && 'btn-disabled'}`}
                 >{n}</div>
               ))}
             </div>
             {hand.length > 1 && (
               <div className="mt-2 pt-2 pb-2 border rounded">
                 <code>
+                  <span>
+                    {hand[hand.length - 2][0].suit === hand[hand.length - 2][1].suit ? 'Suited' : 'Unsuited'}
+                  </span>
                   <span className="mr-1 ml-1">
                     {hand[hand.length - 2][0].card}
-                    {hand[hand.length - 2][0].suit}
                   </span>
-                  :
+                  <span>
+                    &#47;
+                  </span>
                   <span className="ml-1 mr-1">
                     {hand[hand.length - 2][1].card}
-                    {hand[hand.length - 2][1].suit}
                   </span>
-                  =
+                  <span>
+                    &#61;
+                  </span>
                   <span className="ml-1">
                     {score || '∅'}
                   </span>
