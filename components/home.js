@@ -1,9 +1,11 @@
 import { useContext, useState, useEffect } from 'react'
 import _last from 'lodash/last'
 import Image from 'next/image'
+import _sample from 'lodash/sample'
 import { GlobalContext } from '../context/GlobalState'
 import { sklansky } from '../utils/sklansky'
 import { getCard } from '../utils/hand'
+import { prompts } from '../utils/prompts'
 
 const nums = Array(9).fill().map((x,i)=>{
   if (i === 8) {
@@ -17,6 +19,7 @@ const Home = () => {
   const [res, setRes] = useState(null)
   const [score, setScore] = useState(null)
   const [disable, setDisable] = useState(false)
+  const [quote, setQuote ] = useState(null)
 
   const {
     hand,
@@ -54,21 +57,21 @@ const Home = () => {
               { res === null && (
                 <div className="alert alert-info shadow-lg">
                   <div>
-                    <span>What is the quality of this hand?</span>
+                    <span className="text-sm">What is the quality of this hand?</span>
                   </div>
                 </div>
               )}
               { res === true && (
                 <div className="alert alert-success shadow-lg">
                   <div>
-                    <span>Correct! Here&apos;s another hand</span>
+                    <span className="text-sm">{_sample(prompts)}</span>
                   </div>
                 </div>
               )}
               { res === false && (
                 <div className="alert alert-warning shadow-lg">
                   <div>
-                    <span>Incorrect! Try again</span>
+                    <span className="text-sm">Incorrect! Try again</span>
                   </div>
                 </div>
               )}
