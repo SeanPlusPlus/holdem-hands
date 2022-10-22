@@ -4,16 +4,16 @@ import _sampleSize from 'lodash/sampleSize'
 export const hand = () => {
   const rand = _sampleSize(deck(), 2)
 
-  // return [
-  //   {
-  //     card: '9',
-  //     suit: 'C'
-  //   },
-  //   {
-  //     card: 'A',
-  //     suit: 'S'
-  //   },
-  // ]
+  return [
+    {
+      card: 'K',
+      suit: 'C'
+    },
+    {
+      card: 'K',
+      suit: 'S'
+    },
+  ]
 
   return rand
 }

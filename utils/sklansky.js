@@ -260,7 +260,7 @@ export const sklansky = (card1, card2, score) => {
       if (c2 === 'K') { // Pair
         val = 1
       }
-      if (c2 === 'Q') {
+      else if (c2 === 'Q') {
         val = 4
       }
       else if (c2 === 'J') {
