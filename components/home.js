@@ -71,7 +71,7 @@ const Home = () => {
                 </div>
               )}
               {(score !== false) && (
-                <div className="alert alert-info shadow-lg h-14">
+                <div className="lex-col alert alert-info shadow-lg h-14">
                   <div className="flex">
                     <div>
                       {getCard(hand[hand.length - 1][0].card)}
