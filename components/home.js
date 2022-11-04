@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <>
       <div className="hero">
-        <div className="hero-content text-center mt-0 ml-0 mr-0 pr-0 pl-0">
+        <div className="hero-content text-center mt-0 ml-0 mr-0 pr-0 pl-0 pt-2">
           <div className="max-w-md">
             <div className="mb-3">
               { (score === false) && (res !== false) && (
@@ -72,33 +72,35 @@ const Home = () => {
               )}
               {(score !== false) && (
                 <div className="alert alert-info shadow-lg h-14">
-                  <span>
-                    {getCard(hand[hand.length - 1][0].card)}
-                    &nbsp;&#47;&nbsp;
-                    {getCard(hand[hand.length - 1][1].card)}
-                    { (hand[hand.length - 1][0].card !== hand[hand.length - 1][1].card) && (
-                      <span className="font-bold">
-                        {hand[hand.length - 1][0].suit === hand[hand.length - 1][1].suit ? 'Suited' : 'Unsuited'}
-                      </span>
-                    )}
-                  </span>
-                  <span className="ml-2">
-                    { ((score === null)) && (
-                      <div className="badge badge-error gap-2">
-                        {score ? score : '∅'}
-                      </div>
-                    )}
-                    { ((score === 8) || (score === 7) || (score === 6) || (score === 5) || (score === 4)) && (
-                      <div className="badge badge-warning gap-2">
-                        {score}
-                      </div>
-                    )}
-                    { ((score === 3) || (score === 2) || (score === 1)) && (
-                      <div className="badge badge-success gap-2">
-                        {score}
-                      </div>
-                    )}
-                  </span>
+                  <div className="flex">
+                    <div>
+                      {getCard(hand[hand.length - 1][0].card)}
+                      &nbsp;&#47;&nbsp;
+                      {getCard(hand[hand.length - 1][1].card)}
+                      { (hand[hand.length - 1][0].card !== hand[hand.length - 1][1].card) && (
+                        <span className="ml-2 font-bold">
+                          {hand[hand.length - 1][0].suit === hand[hand.length - 1][1].suit ? 'Suited' : 'Unsuited'}
+                        </span>
+                      )}
+                    </div>
+                    <div className="float-right">
+                      { ((score === null)) && (
+                        <div className="badge badge-error gap-2">
+                          {score ? score : '∅'}
+                        </div>
+                      )}
+                      { ((score === 8) || (score === 7) || (score === 6) || (score === 5) || (score === 4)) && (
+                        <div className="badge badge-warning gap-2">
+                          {score}
+                        </div>
+                      )}
+                      { ((score === 3) || (score === 2) || (score === 1)) && (
+                        <div className="badge badge-success gap-2">
+                          {score}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -131,7 +133,7 @@ const Home = () => {
               ))}
             </div>
             {(score !== false) && (
-              <div className="mt-4">
+              <div className="mt-2">
                 <button onClick={handleNextHand} className="btn btn-secondary w-full">Deal next hand</button>
               </div>
             )}
