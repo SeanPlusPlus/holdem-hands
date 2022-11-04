@@ -15,9 +15,8 @@ const nums = Array(9).fill().map((x,i)=>{
 const Home = () => {
   const [display, setDisplay] = useState(null)
   const [res, setRes] = useState(null)
-  const [score, setScore] = useState(null)
+  const [score, setScore] = useState(false)
   const [disable, setDisable] = useState(false)
-  const [quote, setQuote ] = useState(null)
 
   const {
     hand,
@@ -36,10 +35,15 @@ const Home = () => {
     const r = sklansky(card1, card2, n)
     setRes(r)
     if (r) {
-      // setHand()
+      console.log('n', n);
       setScore(n)
     }
     setDisable(false)
+  }
+
+  const handleNextHand = () => {
+    setScore(false)
+    setHand()
   }
 
   if (!display) {
@@ -52,8 +56,8 @@ const Home = () => {
         <div className="hero-content text-center mt-0 ml-0 mr-0 pr-0 pl-0">
           <div className="max-w-md">
             <div className="mb-3">
-              { res === null && (
-                <div className="alert alert-info shadow-lg h-14">
+              { (score === false) && (res !== false) && (
+                <div className="alert shadow-lg h-14">
                   <div>
                     <span className="text-sm">What is the quality of this hand?</span>
                   </div>
@@ -66,7 +70,7 @@ const Home = () => {
                   </div>
                 </div>
               )}
-              {score && (
+              {(score !== false) && (
                 <div className="alert alert-info shadow-lg h-14">
                   <span>
                     {getCard(hand[hand.length - 1][0].card)}
@@ -126,6 +130,11 @@ const Home = () => {
                 >{n}</div>
               ))}
             </div>
+            {(score !== false) && (
+              <div className="mt-4">
+                <button onClick={handleNextHand} className="btn btn-secondary w-full">Deal next hand</button>
+              </div>
+            )}
           </div>
         </div>
       </div>
