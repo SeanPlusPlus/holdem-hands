@@ -36,7 +36,7 @@ const Home = () => {
     const r = sklansky(card1, card2, n)
     setRes(r)
     if (r) {
-      setHand()
+      // setHand()
       setScore(n)
     }
     setDisable(false)
@@ -53,24 +53,48 @@ const Home = () => {
           <div className="max-w-md">
             <div className="mb-3">
               { res === null && (
-                <div className="alert alert-info shadow-lg">
+                <div className="alert alert-info shadow-lg h-14">
                   <div>
                     <span className="text-sm">What is the quality of this hand?</span>
                   </div>
                 </div>
               )}
-              { res === true && (
-                <div className="alert alert-success shadow-lg">
-                  <div>
-                    <span className="text-sm">Correct!</span>
-                  </div>
-                </div>
-              )}
               { res === false && (
-                <div className="alert alert-warning shadow-lg">
+                <div className="alert alert-warning shadow-lg h-14">
                   <div>
                     <span className="text-sm">Incorrect! Try again</span>
                   </div>
+                </div>
+              )}
+              {score && (
+                <div className="alert alert-info shadow-lg h-14">
+                  <span>
+                    {getCard(hand[hand.length - 1][0].card)}
+                    &nbsp;&#47;&nbsp;
+                    {getCard(hand[hand.length - 1][1].card)}
+                    { (hand[hand.length - 1][0].card !== hand[hand.length - 1][1].card) && (
+                      <span className="font-bold">
+                        {hand[hand.length - 1][0].suit === hand[hand.length - 1][1].suit ? 'Suited' : 'Unsuited'}
+                      </span>
+                    )}
+                  </span>
+                  <span className="ml-2">
+                    { ((score === null)) && (
+                      <div className="badge badge-error gap-2">
+                        {score ? score : '∅'}
+                      </div>
+                    )}
+                    { ((score === 8) || (score === 7) || (score === 6) || (score === 5) || (score === 4)) && (
+                      <div className="badge badge-warning gap-2">
+                        {score}
+                      </div>
+                    )}
+                    { ((score === 3) || (score === 2) || (score === 1)) && (
+                      <div className="badge badge-success gap-2">
+                        {score}
+                      </div>
+                    )}
+                  </span>
                 </div>
               )}
             </div>
@@ -102,48 +126,6 @@ const Home = () => {
                 >{n}</div>
               ))}
             </div>
-            {hand.length > 1 && (
-              <div className="mt-2 pt-2 pb-2 border rounded">
-                <div>
-                  <span className="mr-1">
-                    {getCard(hand[hand.length - 2][0].card)}
-                  </span>
-                  <span>
-                    &#47;
-                  </span>
-                  <span className="ml-1 mr-2">
-                    {getCard(hand[hand.length - 2][1].card)}
-                  </span>
-                  { (hand[hand.length - 2][0].card !== hand[hand.length - 2][1].card) && (
-                    <span className="font-bold">
-                      {hand[hand.length - 2][0].suit === hand[hand.length - 2][1].suit ? 'Suited' : 'Unsuited'}
-                    </span>
-                  )}
-                  <span className="ml-2">
-                    { ((score === null) || (score === 8) || (score === 7)) && (
-                      <div className="badge badge-error gap-2">
-                        {score ? score : '∅'}
-                      </div>
-                    )}
-                    { ((score === 6) || (score === 5) || (score === 4)) && (
-                      <div className="badge badge-warning gap-2">
-                        {score}
-                      </div>
-                    )}
-                    { ((score === 3) || (score === 2)) && (
-                      <div className="badge badge-info gap-2">
-                        {score}
-                      </div>
-                    )}
-                    { (score === 1) && (
-                      <div className="badge badge-success gap-2">
-                        {score}
-                      </div>
-                    )}
-                  </span>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
